@@ -11,6 +11,9 @@
 
 <body>
   <h1>Your Chats</h1>
+  <form method="get" action="/chats/new">
+    <button id="new_btn">New</button>
+  </form>
   <% for(let chat of chats){ %>
   <div class="chats">
     <p>From : <%=chat.from%></p>

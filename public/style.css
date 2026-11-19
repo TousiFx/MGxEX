@@ -25,6 +25,48 @@ h1 {
   text-align: center;
 }
 
+/* New Chat Form Wrapper */
+form[action="/chats/new"] {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+/* "New" Button */
+#new_btn {
+  background-color: #075e54;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(7, 94, 84, 0.2);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#new_btn:hover {
+  background-color: #128c7e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(7, 94, 84, 0.25);
+}
+
+#new_btn:active {
+  transform: translateY(0);
+}
+
+#new_btn:focus-visible {
+  outline: 2px solid #25d366;
+  outline-offset: 2px;
+}
+
 /* Individual Chat Card */
 .chats {
   background-color: #ffffff;

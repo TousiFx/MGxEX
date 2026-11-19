@@ -24,6 +24,10 @@ app.get("/chats", async (req, res) => {
   let chats = await Chat.find();
   res.render("index.ejs", { chats });
 });
+app.get("/chats/new", (req, res) => {
+  res.render("new");
+});
+
 app.listen(8080, () => {
   console.log("connection successfull to port 8080");
 });
