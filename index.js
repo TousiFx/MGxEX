@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
+const Chat = require("./models/chat.js");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -17,6 +18,21 @@ async function main() {
 app.get("/", (req, res) => {
   res.send("port is working");
 });
+
+let chat1 = new Chat({
+  from: "tanya",
+  to: "tousif",
+  msg: "whats app dear meow meow",
+  created_at: new Date(),
+});
+chat1
+  .save()
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 app.listen(8080, () => {
   console.log("connection successfull to port 8080");
