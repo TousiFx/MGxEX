@@ -18,22 +18,11 @@ async function main() {
 app.get("/", (req, res) => {
   res.send("port is working");
 });
-
-let chat1 = new Chat({
-  from: "tanya",
-  to: "tousif",
-  msg: "whats app dear meow meow",
-  created_at: new Date(),
+app.get("/chats", async (req, res) => {
+  let chats = await Chat.find();
+  console.log(chats);
+  res.send("Data Received");
 });
-chat1
-  .save()
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-
 app.listen(8080, () => {
   console.log("connection successfull to port 8080");
 });
