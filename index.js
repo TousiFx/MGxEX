@@ -20,8 +20,7 @@ app.get("/", (req, res) => {
 });
 app.get("/chats", async (req, res) => {
   let chats = await Chat.find();
-  console.log(chats);
-  res.send("Data Received");
+  res.render("index.ejs", { chats });
 });
 app.listen(8080, () => {
   console.log("connection successfull to port 8080");

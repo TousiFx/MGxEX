@@ -1,0 +1,81 @@
+/* Reset and base page styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  background-color: #f0f2f5;
+  color: #1c1e21;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Page Heading */
+h1 {
+  font-size: 2rem;
+  color: #075e54;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Individual Chat Card */
+.chats {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.chats:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Sender and Receiver lines */
+.chats > p {
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+/* "From" line */
+.chats > p:first-of-type {
+  font-weight: 600;
+  color: #075e54;
+  margin-bottom: 10px;
+}
+
+/* "Received" line */
+.chats > p:last-of-type {
+  font-size: 0.85rem;
+  color: #777777;
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* Message Bubble */
+.msg {
+  background-color: #dcf8c6;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 4px solid #25d366;
+}
+
+.msg p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #111b21;
+  word-wrap: break-word;
+}
