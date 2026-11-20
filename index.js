@@ -33,7 +33,7 @@ app.get("/chats/new", (req, res) => {
   res.render("new");
 });
 
-app.post("/chats", (req, res) => {
+app.post("/chats", async (req, res) => {
   let { from, to, msg } = req.body;
 
   let newChat = new Chat({
@@ -43,7 +43,7 @@ app.post("/chats", (req, res) => {
     created_at: new Date(),
   });
 
-  newChat
+  await newChat
     .save()
     .then((res) => {
       console.log(res);
@@ -60,15 +60,21 @@ app.get("/chats/:id/edit", async (req, res) => {
   res.render("edit", { chat });
 });
 
-app.put("/chats", async (req, res) => {
+app.put("/chats/:id", async (req, res) => {
   let { id } = req.params;
-  let { updatedMsg } = req.body;
+  let { msg: newMsg } = req.body;
   let updatedChat = await Chat.findByIdAndUpdate(
     id,
-    { msg: updatedMsg },
+    { msg: newMsg },
     { runValidators: true, new: true },
   );
   console.log(updatedChat);
+  res.redirect("/chats");
+});
+app.delete("/chats/:id", async (req, res) => {
+  let { id } = req.params;
+  let delChat = await Chat.findByIdAndDelete(id);
+  console.log(delChat);
   res.redirect("/chats");
 });
 app.listen(8080, () => {

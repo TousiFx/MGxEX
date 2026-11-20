@@ -105,9 +105,9 @@
   <body>
     <h2>Edit your Message</h2>
     <p>This is chat from : <i><%=chat.from%> </i> to <i><%=chat.to%></i></p>
-    <form method="post" action="/chat/<%=chat._id%>?_method=PUT">
+    <form method="post" action="/chats/<%=chat._id%>?_method=PUT">
       <textarea name="msg"><%=chat.msg%></textarea>
-      <button>sumit</button>
+      <button>Submit</button>
     </form>
   </body>
 </html>
