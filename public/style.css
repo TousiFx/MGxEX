@@ -34,8 +34,8 @@ form[action="/chats/new"] {
   margin-bottom: 16px;
 }
 
-/* "New" Button */
-#new_btn {
+/* "New" Button (Top) */
+form[action="/chats/new"] #new_btn {
   background-color: #075e54;
   color: #ffffff;
   font-family: inherit;
@@ -52,17 +52,17 @@ form[action="/chats/new"] {
     box-shadow 0.2s ease;
 }
 
-#new_btn:hover {
+form[action="/chats/new"] #new_btn:hover {
   background-color: #128c7e;
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(7, 94, 84, 0.25);
 }
 
-#new_btn:active {
+form[action="/chats/new"] #new_btn:active {
   transform: translateY(0);
 }
 
-#new_btn:focus-visible {
+form[action="/chats/new"] #new_btn:focus-visible {
   outline: 2px solid #25d366;
   outline-offset: 2px;
 }
@@ -105,6 +105,9 @@ form[action="/chats/new"] {
   color: #777777;
   text-align: right;
   margin-top: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f2f5;
 }
 
 /* Message Bubble */
@@ -120,4 +123,51 @@ form[action="/chats/new"] {
   line-height: 1.5;
   color: #111b21;
   word-wrap: break-word;
+}
+
+/* Card Action Forms (Edit & Delete aligned side-by-side) */
+.chats form {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* Shared Base Style for Card Buttons */
+.chats button {
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.chats button:active {
+  transform: scale(0.97);
+}
+
+/* Edit Button */
+.chats form[action$="/edit"] button {
+  background-color: #e7f3ef;
+  color: #075e54;
+}
+
+.chats form[action$="/edit"] button:hover {
+  background-color: #075e54;
+  color: #ffffff;
+}
+
+/* Delete Button */
+.chats form[action*="DELETE"] button {
+  background-color: #fdecea;
+  color: #d93025;
+}
+
+.chats form[action*="DELETE"] button:hover {
+  background-color: #d93025;
+  color: #ffffff;
 }
