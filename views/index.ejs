@@ -21,7 +21,11 @@
       <p>Message : <%=chat.msg%></p>
     </div>
     <p>Received : <i><%=chat.to%></i></p>
+      <form method="get" action="/chats/<%=chat.id%>/edit">
+    <button id="new_btn">Edit</button>
+  </form>
   </div>
   <%}%>
+
 </body>
 </html>

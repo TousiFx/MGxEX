@@ -123,8 +123,8 @@
   </head>
   <body>
     <h2>Write New MSG</h2>
-    <form>
-      <input type="text" placeholder="who are you" name="From" />
+    <form method="POST" action="/chats">
+      <input type="text" placeholder="who are you" name="from" />
       <textarea name="msg"></textarea>
       <input type="text" placeholder="Add receiver" name="to" />
       <button id="send_btn">Send</button>
